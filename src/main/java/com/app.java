@@ -66,13 +66,13 @@ public class app {
         Item item = new Item();
         item.setName("item1");
         item.setPrice(2);
-
-        order3.addItem(item);
-
+        
         Item item2 = new Item();
         item2.setName("item2");
         item2.setPrice(2);
 
+
+        order3.addItem(item);
         order3.addItem(item2);
 
         Orders order4 =  new Orders();
@@ -85,9 +85,7 @@ public class app {
         session.save(order3);
         session.save(order4);
 
-//        order3.removeItem(item2);
-
-        session.save(order3);
+        order4.removeItem(item3);
         session.getTransaction().commit();
         session.close();
 

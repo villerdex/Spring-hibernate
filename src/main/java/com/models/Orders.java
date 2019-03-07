@@ -22,9 +22,12 @@ public class Orders {
     @JoinColumn(name = "person_id")
     private Person person;
 
-    @ManyToMany( cascade = {
-            CascadeType.ALL
-    })
+//    @ManyToMany( cascade = {
+//            CascadeType.PERSIST, CascadeType.DETACH, CascadeType.MERGE
+//    })
+  @ManyToMany( cascade = {
+		  CascadeType.ALL
+  })
     @JoinTable(name = "order_item",
             joinColumns = @JoinColumn(name = "order_id"),
             inverseJoinColumns = @JoinColumn(name = "item_id")

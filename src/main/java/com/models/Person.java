@@ -6,7 +6,9 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Getter
 @Setter
@@ -30,7 +32,7 @@ import java.util.List;
            orphanRemoval = true
    )
 
-   private List<Orders> orderList = new ArrayList<Orders>();
+   private Set<Orders> orderList = new HashSet<Orders>();
 
    public void addOrder(Orders order) {
       order.setPerson(this);
